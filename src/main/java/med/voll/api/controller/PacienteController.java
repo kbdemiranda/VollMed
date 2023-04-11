@@ -1,7 +1,8 @@
 package med.voll.api.controller;
 
 import jakarta.validation.Valid;
-import med.voll.api.model.paciente.*;
+import med.voll.api.model.paciente.DadosAtualizacaoPaciente;
+import med.voll.api.model.paciente.DadosCadastroPaciente;
 import med.voll.api.service.PacienteService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
