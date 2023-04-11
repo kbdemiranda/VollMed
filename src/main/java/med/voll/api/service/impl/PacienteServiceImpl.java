@@ -1,5 +1,6 @@
 package med.voll.api.service.impl;
 
+import jakarta.persistence.EntityNotFoundException;
 import med.voll.api.model.endereco.Endereco;
 import med.voll.api.model.paciente.*;
 import med.voll.api.repository.PacienteRepository;
@@ -51,6 +52,6 @@ public class PacienteServiceImpl implements PacienteService {
     }
 
     private Paciente getPaciente(Long id){
-        return pacienteRepository.findById(id).orElseThrow();
+        return pacienteRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 }

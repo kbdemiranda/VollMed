@@ -1,5 +1,6 @@
 package med.voll.api.service.impl;
 
+import jakarta.persistence.EntityNotFoundException;
 import med.voll.api.model.endereco.Endereco;
 import med.voll.api.model.medico.*;
 import med.voll.api.repository.MedicoRepository;
@@ -45,11 +46,12 @@ public class MedicoServiceImpl implements MedicoService {
 
     @Override
     public Medico excluirMedico(Long id) {
-        medicoRepository.desativarMedico(id);
-        return getMedico(id);
+        var medico = getMedico(id);
+        medicoRepository.desativarMedico(medico.getId());
+        return medico;
     }
 
     private Medico getMedico(Long id){
-        return medicoRepository.findById(id).orElseThrow();
+        return medicoRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 }
