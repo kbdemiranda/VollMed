@@ -1,8 +1,6 @@
 package med.voll.api.model.paciente;
 
 import med.voll.api.model.endereco.Endereco;
-import med.voll.api.model.medico.Especialidade;
-import med.voll.api.model.medico.Medico;
 
 public record DadosDetalhamentoPaciente(
         Long id,
