@@ -1,6 +1,7 @@
 package med.voll.api.controller;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import med.voll.api.model.medico.DadosAtualizacaoMedico;
 import med.voll.api.model.medico.DadosCadastroMedico;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 
 @SecurityRequirement(name = "bearer-key")
+@Tag(name = "Médicos", description = "Endpoint de gerenciamento dos médicos do sistema")
 
 @RestController
 @RequestMapping("/medicos")
